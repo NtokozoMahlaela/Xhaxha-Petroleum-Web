@@ -67,6 +67,7 @@ The build files will be in the `dist` directory.
 ## Project Structure
 
 ```
+public/
 src/
 ├── assets/           # Images and other static assets
 ├── components/       # Reusable UI components
@@ -80,51 +81,6 @@ src/
 └── main.jsx          # Application entry point
 ```
 
-## Customization
-
-### Environment Variables
-
-Create a `.env` file in the root directory and add any necessary environment variables:
-
-```env
-VITE_API_URL=your_api_url_here
-VITE_GOOGLE_MAPS_API_KEY=your_google_maps_api_key
-```
-
-### Styling
-
-This project uses Tailwind CSS for styling. To customize the design:
-
-1. Edit the `tailwind.config.js` file to modify colors, fonts, and other design tokens.
-2. Add custom styles in the `src/index.css` file.
-
-## Deployment
-
-### Vercel
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fyour-username%2Fxhaxha-petroleum-web)
-
-1. Push your code to a GitHub/GitLab/Bitbucket repository.
-2. Import the project on Vercel.
-3. Vercel will automatically detect it's a Vite project and set up the build and output settings.
-4. Click Deploy!
-
-### Netlify
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/your-username/xhaxha-petroleum-web)
-
-1. Push your code to a GitHub/GitLab/Bitbucket repository.
-2. Import the project on Netlify.
-3. Set the build command to `npm run build` and publish directory to `dist`.
-4. Click Deploy site!
-
-## Contributing
-
-1. Fork the repository
-2. Create a new branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
 
 ## License
 
@@ -140,5 +96,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <p align="center">
-  Built with ❤️ by Xhaxha Petroleum
+  Built with ❤️ by Ntokozo Mahlaela
 </p>
