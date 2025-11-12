@@ -178,13 +178,13 @@ const Products = () => {
           <div className="flex flex-wrap border-b border-gray-200">
             <button
               onClick={() => setActiveTab('fuels')}
-              className={`px-6 py-4 font-medium text-sm md:text-base ${activeTab === 'fuels' ? 'text-primary border-b-2 border-primary' : 'text-gray-600 hover:text-primary'}`}
+              className={`px-6 py-4 font-medium text-sm md:text-base rounded-t-lg transition-all duration-300 ${activeTab === 'fuels' ? 'text-emerald-600 border-b-2 border-emerald-600 bg-emerald-50' : 'text-gray-600 hover:text-emerald-600 hover:bg-gray-50'}`}
             >
               Fuels
             </button>
             <button
               onClick={() => setActiveTab('lubricants')}
-              className={`px-6 py-4 font-medium text-sm md:text-base ${activeTab === 'lubricants' ? 'text-primary border-b-2 border-primary' : 'text-gray-600 hover:text-primary'}`}
+              className={`px-6 py-4 font-medium text-sm md:text-base rounded-t-lg transition-all duration-300 ${activeTab === 'lubricants' ? 'text-emerald-600 border-b-2 border-emerald-600 bg-emerald-50' : 'text-gray-600 hover:text-emerald-600 hover:bg-gray-50'}`}
             >
               Lubricants & Oils
             </button>
@@ -244,10 +244,10 @@ const Products = () => {
                   </div>
 
                   <div className="mt-6 flex justify-between items-center">
-                    <button className="text-primary font-medium text-sm hover:underline flex items-center">
+                    <button className="text-emerald-600 hover:text-emerald-700 font-medium text-sm hover:underline flex items-center transition-colors">
                       <FiDownload className="mr-1" /> Download Specs
                     </button>
-                    <button className="btn btn-primary text-sm px-4 py-2">
+                    <button className="bg-emerald-600 hover:bg-emerald-700 text-white font-medium text-sm px-5 py-2.5 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
                       Request Quote
                     </button>
                   </div>

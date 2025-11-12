@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiTruck, FiBarChart2, FiShield, FiDroplet, FiCheck, FiDownload } from 'react-icons/fi';
-// Placeholder images from placeholder.com
-const ServiceHero = 'https://via.placeholder.com/1920x800.png?text=Our+Services';
-const Service1 = 'https://via.placeholder.com/400x300.png?text=Fuel+Delivery';
-const Service2 = 'https://via.placeholder.com/400x300.png?text=Storage+Solutions';
-const Service3 = 'https://via.placeholder.com/400x300.png?text=Fuel+Management';
-const Service4 = 'https://via.placeholder.com/400x300.png?text=Consulting';
+// Service images
+const ServiceHero = '/images/services/hero-services.jpg';
+const Service1 = '/images/services/bulk-fuel-supply.jpg';
+const Service2 = '/images/services/fuel-management.jpg';
+const Service3 = '/images/services/hsse-compliance.jpg';
+const Service4 = '/images/services/consulting.jpg';
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -198,10 +198,8 @@ const Services = () => {
                 <button
                   key={category.id}
                   onClick={() => setActiveTab(category.id)}
-                  className={`whitespace-nowrap px-4 py-3 text-sm font-medium rounded-md transition-colors ${
-                    activeTab === category.id
-                      ? 'bg-primary text-white'
-                      : 'text-gray-700 hover:bg-gray-100'
+                  className={`whitespace-nowrap px-6 py-3 font-medium rounded-full transition-all duration-300 ${
+                    activeTab === category.id ? 'bg-emerald-600 text-white shadow-md' : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 shadow-sm hover:shadow-md'
                   }`}
                 >
                   {category.name}
@@ -233,7 +231,7 @@ const Services = () => {
                   <p className="text-gray-600 mb-4 flex-grow">{service.description}</p>
                   <button
                     onClick={() => setSelectedService(service)}
-                    className="text-primary font-medium text-sm hover:underline text-left"
+                    className="text-emerald-600 hover:text-emerald-700 font-medium text-sm flex items-center hover:underline transition-colors"
                   >
                     Learn more about this service →
                   </button>
@@ -252,7 +250,7 @@ const Services = () => {
               <h3 className="text-2xl font-bold">{selectedService.title}</h3>
               <button
                 onClick={() => setSelectedService(null)}
-                className="text-gray-500 hover:text-gray-700"
+                className="text-gray-500 hover:text-gray-700 bg-white/80 hover:bg-white rounded-full p-2 shadow-md hover:shadow-lg transition-all duration-300"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -314,15 +312,15 @@ const Services = () => {
               <div className="mt-8 pt-6 border-t">
                 <h4 className="text-lg font-semibold mb-4">Service Documents</h4>
                 <div className="flex flex-wrap gap-3">
-                  <button className="flex items-center text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md transition-colors">
+                  <button className="flex items-center text-sm font-medium text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-100 px-4 py-2.5 rounded-lg transition-all duration-300 hover:shadow-md">
                     <FiDownload className="mr-2" />
                     Service Brochure (PDF)
                   </button>
-                  <button className="flex items-center text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md transition-colors">
+                  <button className="flex items-center text-sm font-medium text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-100 px-4 py-2.5 rounded-lg transition-all duration-300 hover:shadow-md">
                     <FiDownload className="mr-2" />
                     Technical Specifications
                   </button>
-                  <button className="flex items-center text-sm text-gray-700 bg-gray-100 hover:bg-gray-200 px-4 py-2 rounded-md transition-colors">
+                  <button className="flex items-center text-sm font-medium text-emerald-700 bg-emerald-50 hover:bg-emerald-100 border border-emerald-100 px-4 py-2.5 rounded-lg transition-all duration-300 hover:shadow-md">
                     <FiDownload className="mr-2" />
                     Case Study
                   </button>

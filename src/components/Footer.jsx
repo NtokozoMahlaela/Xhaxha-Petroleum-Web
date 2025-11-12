@@ -14,16 +14,16 @@ const Footer = () => {
 
   const contactInfo = [
     {
-      icon: <FaMapMarkerAlt className="text-primary text-xl" />,
+      icon: <FaMapMarkerAlt className="text-emerald-500 text-xl flex-shrink-0" />,
       text: '9 Cedar Avenue West, Fourways, Sandton 2191',
     },
     {
-      icon: <FaPhone className="text-primary text-xl" />,
+      icon: <FaPhone className="text-emerald-500 text-xl flex-shrink-0" />,
       text: '+27 83 309 9640',
       link: 'tel:+27833099640',
     },
     {
-      icon: <FaEnvelope className="text-primary text-xl" />,
+      icon: <FaEnvelope className="text-emerald-500 text-xl flex-shrink-0" />,
       text: 'info@xhaxhapetroleum.co.za',
       link: 'mailto:info@xhaxhapetroleum.co.za',
     },
@@ -36,7 +36,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-dark text-white pt-16 pb-8">
+    <footer className="bg-gray-900 text-white pt-16 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
@@ -55,10 +55,10 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-gray-300 hover:text-primary transition-colors text-xl"
-                  aria-label={social.icon.type.name}
+                  className="w-12 h-12 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white flex items-center justify-center text-2xl transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-emerald-500/30"
+                  aria-label={social.icon.type.name.replace('Fa', '')}
                 >
-                  {social.icon}
+                  {React.cloneElement(social.icon, { className: 'w-6 h-6' })}
                 </a>
               ))}
             </div>
@@ -72,7 +72,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.path}
-                    className="text-gray-300 hover:text-primary transition-colors"
+                    className="text-white hover:text-primary transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -86,17 +86,17 @@ const Footer = () => {
             <h4 className="text-xl font-bold mb-4">Contact Us</h4>
             <ul className="space-y-4">
               {contactInfo.map((item, index) => (
-                <li key={index} className="flex items-start space-x-3">
-                  <span className="mt-1">{item.icon}</span>
+                <li key={index} className="flex items-start space-x-4">
+                  <span className="mt-0.5">{item.icon}</span>
                   {item.link ? (
                     <a
                       href={item.link}
-                      className="text-gray-300 hover:text-primary transition-colors"
+                      className="text-white hover:text-primary transition-colors"
                     >
                       {item.text}
                     </a>
                   ) : (
-                    <span className="text-gray-300">{item.text}</span>
+                    <span className="text-white">{item.text}</span>
                   )}
                 </li>
               ))}
@@ -108,15 +108,15 @@ const Footer = () => {
             <h4 className="text-xl font-bold mb-4">Business Hours</h4>
             <ul className="space-y-2">
               <li className="flex justify-between">
-                <span className="text-gray-300">Monday - Friday</span>
+                <span className="text-white">Monday - Friday</span>
                 <span>08:00 - 17:00</span>
               </li>
               <li className="flex justify-between">
-                <span className="text-gray-300">Saturday</span>
+                <span className="text-white">Saturday</span>
                 <span>Closed</span>
               </li>
               <li className="flex justify-between">
-                <span className="text-gray-300">Sunday</span>
+                <span className="text-white">Sunday</span>
                 <span>Closed</span>
               </li>
             </ul>
@@ -124,7 +124,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
+        <div className="border-t border-gray-800 pt-8 mt-8 text-center text-white">
           <p>
             &copy; {currentYear} Xhaxha Petroleum (Pty) Ltd. All Rights Reserved. | Registration No: 2024/286983/07
           </p>

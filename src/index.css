@@ -627,11 +627,48 @@
     width: 80%;
   }
 
+  /* Button Base Styles */
+  button, .btn, [type='button'], [type='submit'], [type='reset'] {
+    @apply font-medium text-white bg-emerald-600 hover:bg-emerald-700 focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 focus:outline-none transition-all duration-200 ease-in-out shadow-sm disabled:opacity-70 disabled:cursor-not-allowed;
+  }
+  
+  /* Button Sizes */
+  .btn-sm {
+    @apply px-3 py-1.5 text-sm rounded-md;
+  }
+  
+  .btn-md {
+    @apply px-4 py-2 text-base rounded-lg;
+  }
+  
+  .btn-lg {
+    @apply px-6 py-3 text-lg rounded-lg;
+  }
+  
+  /* Button Variants */
+  .btn-primary {
+    @apply bg-emerald-600 hover:bg-emerald-700 text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-600 hover:bg-gray-700 text-white;
+  }
+  
+  .btn-outline {
+    @apply bg-transparent border-2 border-emerald-600 text-emerald-600 hover:bg-emerald-50;
+  }
+  
+  .btn-ghost {
+    @apply bg-transparent hover:bg-gray-100 text-gray-700;
+  }
+  
+  /* Special Buttons */
   .btn-cta {
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
     color: white;
-    border-radius: 4px;
-    padding: 0.6rem 1.5rem;
+    border-radius: 8px;
+    padding: 0.75rem 2rem;
+    @apply font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300;
     font-weight: 600;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
@@ -736,7 +773,8 @@
   .card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-    border-color: #3b82f6;
+    border-color: #4083f0;
+  
   }
 
   .card-industrial {

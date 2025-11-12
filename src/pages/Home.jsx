@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FiArrowRight, FiTruck, FiShield, FiAward, FiClock } from 'react-icons/fi';
 
-// Import images (you'll need to add these to your assets folder)
-const HeroImage = 'https://images.unsplash.com/photo-1603625630381-9a5b5d8a2c1a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80';
-const AboutImage = 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80';
-const Service1 = 'https://images.unsplash.com/photo-1609769688596-97d6b5b3a3b2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80';
-const Service2 = 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80';
-const Service3 = 'https://images.unsplash.com/photo-1601580529611-8d6f3b4c1b0a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80';
-const Testimonial1 = 'https://randomuser.me/api/portraits/men/32.jpg';
-const Testimonial2 = 'https://via.placeholder.com/150/cccccc/808080?text=Person+2';
-const Testimonial3 = 'https://via.placeholder.com/150/cccccc/808080?text=Person+3';
+// Image paths
+const HeroImage = '/images/hero/IMG-20251011-WA0029(1).jpg';
+const AboutImage = '/images/about/Minister-of-Mineral-Resources-echoes-BBP-Law-recommendations.jpg.jpeg';
+const Service1 = '/images/services/Photo-for-BP-Edgewater-8-1024x768.jpg';
+const Service2 = '/images/products/Petrol-south-africa.jpg';
+const Service3 = '/images/products/petrolstation-e1470054216342.jpg';
+// Using team photo as placeholder for testimonials (you may want to add specific testimonial photos later)
+const Testimonial1 = '/images/team/adf5af6695994a6fbcc2428b53b93181.jpg';
+const Testimonial2 = '/images/team/adf5af6695994a6fbcc2428b53b93181.jpg';
+const Testimonial3 = '/images/team/adf5af6695994a6fbcc2428b53b93181.jpg';
 
 const Home = () => {
   const stats = [
@@ -68,19 +69,19 @@ const Home = () => {
   const testimonials = [
     {
       quote: "Xhaxha Petroleum has been our trusted fuel supplier for years. Their reliability and customer service are unmatched.",
-      author: "John Smith",
+      author: "Zama Ndima",
       position: "Operations Manager, ABC Mining",
       image: Testimonial1,
     },
     {
       quote: "The quality of their products and the efficiency of their delivery service have significantly improved our operations.",
-      author: "Sarah Johnson",
+      author: "Ntokozo Mahlaela",
       position: "CEO, XYZ Transport",
       image: Testimonial2,
     },
     {
       quote: "Professional, reliable, and always on time. Xhaxha Petroleum is our go-to for all our fuel needs.",
-      author: "Michael Brown",
+      author: "Lerato Mokoena",
       position: "Facility Manager, 123 Industries",
       image: Testimonial3,
     },
@@ -282,35 +283,35 @@ const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-primary text-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <span className="text-secondary font-semibold">Testimonials</span>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-            <div className="w-20 h-1 bg-secondary mx-auto"></div>
+            <span className="text-emerald-600 font-semibold">Testimonials</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">What Our Clients Say</h2>
+            <div className="w-20 h-1 bg-emerald-500 mx-auto"></div>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm p-8 rounded-lg"
+                className="bg-white border border-gray-200 shadow-lg p-8 rounded-lg hover:shadow-xl transition-shadow duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <div className="text-yellow-400 text-2xl mb-4">★★★★★</div>
-                <p className="text-gray-100 italic mb-6">"{testimonial.quote}"</p>
+                <p className="text-gray-800 italic mb-6">"{testimonial.quote}"</p>
                 <div className="flex items-center">
                   <img
                     src={testimonial.image}
                     alt={testimonial.author}
-                    className="w-12 h-12 rounded-full object-cover mr-4"
+                    className="w-12 h-12 rounded-full object-cover mr-4 border-2 border-emerald-100"
                   />
                   <div>
-                    <h4 className="font-bold">{testimonial.author}</h4>
-                    <p className="text-sm text-gray-200">{testimonial.position}</p>
+                    <h4 className="font-bold text-gray-900">{testimonial.author}</h4>
+                    <p className="text-sm text-gray-600">{testimonial.position}</p>
                   </div>
                 </div>
               </motion.div>

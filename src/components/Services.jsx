@@ -20,7 +20,8 @@ const services = [
   {
     icon: <FiShield className="w-10 h-10 text-gold-500" />,
     title: 'HSSE Compliance',
-    description: 'Comprehensive health, safety, security, and environmental compliance services.',n    features: ['Risk Assessment', 'Safety Training', 'Incident Management', 'Regulatory Compliance'],
+    description: 'Comprehensive health, safety, security, and environmental compliance services.',
+    features: ['Risk Assessment', 'Safety Training', 'Incident Management', 'Regulatory Compliance'],
     color: 'from-red-500 to-rose-600',
   },
   {
@@ -121,9 +122,12 @@ const Services = () => {
           viewport={{ once: true }}
           transition={{ delay: 0.3, duration: 0.5 }}
         >
-          <button className="px-8 py-4 bg-gradient-to-r from-gold-500 to-amber-600 text-white font-medium rounded-full hover:shadow-lg hover:shadow-gold-500/30 transition-all duration-300 transform hover:-translate-y-1">
+          <Link 
+            to="/services"
+            className="inline-block px-8 py-4 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white font-semibold rounded-full hover:shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 transform hover:-translate-y-0.5 hover:scale-105"
+          >
             View All Services
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>
