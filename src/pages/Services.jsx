@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiTruck, FiBarChart2, FiShield, FiDroplet, FiCheck, FiDownload } from 'react-icons/fi';
 // Service images
-const ServiceHero = '/images/services/hero-services.jpg';
-const Service1 = '/images/services/bulk-fuel-supply.jpg';
-const Service2 = '/images/services/fuel-management.jpg';
-const Service3 = '/images/services/hsse-compliance.jpg';
-const Service4 = '/images/services/consulting.jpg';
+const ServiceHero = '/images/services/Photo-for-BP-Edgewater-8-1024x768.jpg';
+const Service1 = '/images/services/Bulk supply.jpg';
+const Service2 = '/images/services/fuel-management-system.webp';
+const Service3 = '/images/services/Bulk-Oil-Fuel-Industrial-Lubricants-Suppliers.jpg';
+const Service4 = '/images/services/Above-Ground-Fuel-Tank-Installation.jpg';
 
 const Services = () => {
   const [activeTab, setActiveTab] = useState('all');
@@ -133,7 +133,7 @@ const Services = () => {
       title: 'B-BBEE Fuel Procurement',
       category: 'bbbee',
       icon: <FiCheck className="w-6 h-6 text-primary" />,
-      image: Service2,
+      image: '/images/services/b-bbee.jpg',
       description: 'Strategic B-BBEE fuel procurement solutions to help your business meet its transformation goals while maintaining supply chain efficiency.',
       features: [
         'B-BBEE compliance',
@@ -217,14 +217,28 @@ const Services = () => {
             {filteredServices.map((service) => (
               <motion.div
                 key={service.id}
-                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col h-full"
+                className="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col h-full group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="h-48 bg-gray-200 flex items-center justify-center text-gray-400">
-                  {service.icon}
+                <div className="h-48 overflow-hidden relative">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <span className="text-white font-medium text-sm bg-black/60 px-3 py-1 rounded-full">
+                      {service.category === 'fuel' && 'Fuel Supply'}
+                      {service.category === 'management' && 'Management'}
+                      {service.category === 'lubricants' && 'Lubricants'}
+                      {service.category === 'fleet' && 'Fleet Solutions'}
+                      {service.category === 'installation' && 'Installation'}
+                      {service.category === 'bbbee' && 'B-BBEE'}
+                    </span>
+                  </div>
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
                   <h3 className="text-xl font-bold mb-3">{service.title}</h3>

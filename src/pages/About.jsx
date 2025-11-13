@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { FiCheck, FiTarget, FiShield, FiUsers, FiAward } from 'react-icons/fi';
-// Placeholder images from placeholder.com
-const AboutHero = 'https://via.placeholder.com/1920x800.png?text=About+Us';
+// Images
+const AboutHero = '/images/hero/ChatGPT Image Nov 13, 2025, 12_24_54 AM.png';
 const TeamImage = 'https://via.placeholder.com/800x600.png?text=Our+Team';
 const ValuesImage = 'https://via.placeholder.com/800x600.png?text=Our+Values';
 
@@ -38,15 +38,27 @@ const About = () => {
     'Teamwork and collaboration'
   ];
 
+  console.log('Image path:', AboutHero);
+  
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-32 bg-gray-900 text-white">
+      <section className="relative h-[60vh] min-h-[400px] bg-gray-900 text-white flex items-center justify-center">
         <div className="absolute inset-0">
           <img
             src={AboutHero}
             alt="About Xhaxha Petroleum"
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover"
+            style={{
+              objectPosition: 'center',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
+            onError={(e) => {
+              console.error('Error loading image:', e.target.src);
+              e.target.style.display = 'none';
+            }}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/80"></div>
         </div>
