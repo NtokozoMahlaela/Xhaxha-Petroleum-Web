@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { FiArrowRight, FiTruck, FiShield, FiAward, FiClock } from 'react-icons/fi';
 
 // Image paths
-const HeroImage = '/images/hero/ChatGPT Image Nov 13, 2025, 12_24_54 AM.png';
+const HeroImage = '/images/hero/IMG-20251011-WA0029(1).jpg';
 const AboutImage = '/images/about/Minister-of-Mineral-Resources-echoes-BBP-Law-recommendations.jpg.jpeg';
 const Service1 = '/images/services/Photo-for-BP-Edgewater-8-1024x768.jpg';
 const Service2 = '/images/products/Petrol-south-africa.jpg';

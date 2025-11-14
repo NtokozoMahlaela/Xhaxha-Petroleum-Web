@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { FiCheck, FiTarget, FiShield, FiUsers, FiAward } from 'react-icons/fi';
 // Images
 const AboutHero = '/images/hero/ChatGPT Image Nov 13, 2025, 12_24_54 AM.png';
-const TeamImage = 'https://via.placeholder.com/800x600.png?text=Our+Team';
-const ValuesImage = 'https://via.placeholder.com/800x600.png?text=Our+Values';
+const TeamImage = '/images/about/Investing-in-SA_1200x675-1024x576.png';
+const ValuesImage = '/images/about/oil-barrels.avif';
 
 const About = () => {
   const features = [
@@ -181,7 +181,7 @@ const About = () => {
               {
                 name: 'Lethumusa Mokoena',
                 position: 'Founder & CEO',
-                bio: 'With over 15 years of experience in the petroleum industry, Lethumusa leads Xhaxha Petroleum with a vision for innovation and excellence.'
+                bio: 'With over 9 years of experience in the petroleum industry, Lethumusa leads Xhaxha Petroleum with a vision for innovation and excellence.'
               },
               {
                 name: 'Vacant',
@@ -202,8 +202,16 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className="h-64 bg-gray-200 flex items-center justify-center text-gray-400">
-                  <span className="text-4xl">👤</span>
+                <div className="h-64 bg-gray-200 overflow-hidden">
+                  <img 
+                    src={member.name === 'Lethumusa Mokoena' ? '/images/team/lethumusa mokoena.jpg' : ''} 
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.src = '';
+                      e.target.parentElement.innerHTML = '<span class="text-4xl w-full h-full flex items-center justify-center">👤</span>';
+                    }}
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-1">{member.name}</h3>
