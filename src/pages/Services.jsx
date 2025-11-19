@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { FiTruck, FiBarChart2, FiShield, FiDroplet, FiCheck, FiDownload } from 'react-icons/fi';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiDownload, FiChevronDown, FiTruck, FiDroplet, FiSettings, FiShield, FiClock, FiUsers, FiBarChart2, FiCheck } from 'react-icons/fi';
 // Service images
 const ServiceHero = '/images/services/Photo-for-BP-Edgewater-8-1024x768.jpg';
 const Service1 = '/images/services/Bulk supply.jpg';
@@ -170,23 +170,104 @@ const Services = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative py-32 bg-gray-900 text-white">
+      <section className="relative py-32 bg-gray-900 text-white rounded-b-3xl overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <motion.img
             src={ServiceHero}
             alt="Fuel services"
-            className="w-full h-full object-cover opacity-40"
+            className="w-full h-full object-cover"
+            initial={{ scale: 1.1 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 8, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/80"></div>
+          <motion.div 
+            className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary-dark/80"
+            animate={{ opacity: [0.7, 0.9, 0.7] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          />
         </div>
+        
+        {/* Floating particles animation */}
+        <div className="absolute inset-0 overflow-hidden">
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-emerald-400 rounded-full opacity-60"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -100, 0],
+                x: [0, Math.random() * 50 - 25, 0],
+                opacity: [0, 0.8, 0],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </div>
+
         <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
-            <p className="text-xl text-gray-200">
+          <motion.div 
+            className="max-w-3xl"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <motion.h1 
+              className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-emerald-200 bg-clip-text text-transparent"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Our Services
+            </motion.h1>
+            <motion.p 
+              className="text-xl text-gray-200 mb-8"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               Comprehensive fuel solutions tailored to your business needs
-            </p>
-          </div>
+            </motion.p>
+            
+            <motion.div
+              className="flex gap-4"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
+              <motion.button
+                className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-emerald-500/25"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Explore Services
+              </motion.button>
+              <motion.button
+                className="border-2 border-white/30 text-white hover:bg-white/10 font-semibold px-6 py-3 rounded-lg transition-all duration-300 backdrop-blur-sm"
+                whileHover={{ scale: 1.05, y: -2, borderColor: "rgba(255,255,255,0.6)" }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Get Quote
+              </motion.button>
+            </motion.div>
+          </motion.div>
         </div>
+        
+        {/* Scroll indicator */}
+        <motion.div
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white/60"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <FiChevronDown className="w-6 h-6" />
+        </motion.div>
       </section>
 
       {/* Services Tabs */}
